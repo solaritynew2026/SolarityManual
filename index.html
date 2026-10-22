@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta viewport actualizado para mejor comportamiento en teléfonos -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Meta viewport corregido para permitir el zoom (pellizco) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solarity - Your Solar Partner</title>
     
     <!-- Tailwind CSS for rapid UI styling -->
@@ -40,7 +40,7 @@
             transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
         }
 
-        /* Solar Animation Background */
+        /* Solar Animation Background (Ajustado para no cortarse en móviles) */
         .solar-container {
             position: absolute;
             top: 50%;
@@ -57,8 +57,8 @@
 
         .solar-core {
             position: absolute;
-            width: min(50vw, 250px);
-            height: min(50vw, 250px);
+            width: min(60vw, 250px);
+            height: min(60vw, 250px);
             border-radius: 50%;
             background: radial-gradient(circle, rgba(247, 142, 30, 0.15) 0%, rgba(247, 142, 30, 0) 70%);
             animation: pulseCore 3s ease-in-out infinite alternate;
@@ -66,8 +66,8 @@
 
         .solar-ring-1 {
             position: absolute;
-            width: min(75vw, 400px);
-            height: min(75vw, 400px);
+            width: min(85vw, 420px);
+            height: min(85vw, 420px);
             border-radius: 50%;
             border: 2px dashed rgba(247, 142, 30, 0.5); /* Solarity Orange */
             animation: spinRays 25s linear infinite;
@@ -75,8 +75,8 @@
 
         .solar-ring-2 {
             position: absolute;
-            width: min(95vw, 550px);
-            height: min(95vw, 550px);
+            width: min(105vw, 580px);
+            height: min(105vw, 580px);
             border-radius: 50%;
             border: 1px solid rgba(35, 31, 32, 0.08); /* Solarity Charcoal trace */
             animation: spinRaysRev 35s linear infinite;
@@ -121,15 +121,14 @@
             position: relative;
         }
 
-        /* ESTILOS DEL LOGO MEJORADOS PARA MÓVIL */
+        /* Logo ajustado para encajar bien dentro de los anillos */
         .loader-content img {
-            max-width: 350px; /* Un poco más grande en escritorio */
-            width: 85vw; /* Escala mejor en teléfonos */
+            max-width: 260px;
+            width: 70vw; 
             height: auto;
             display: block;
             margin: 0 auto;
             animation: floatLogo 4s infinite ease-in-out;
-            /* Se añade sombra para que destaque más sobre los anillos */
             filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15)); 
         }
 
@@ -169,8 +168,8 @@
         .iframe-container {
             flex-grow: 1;
             width: 100%;
-            height: calc(100vh - 64px); /* Fallback height */
-            -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+            height: calc(100vh - 64px);
+            -webkit-overflow-scrolling: touch;
         }
         
         iframe {
@@ -185,7 +184,7 @@
             opacity: 0;
             transform: translateY(100px);
             animation: slideUpBounce 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-            animation-delay: 2.3s; /* Waits for loader to finish (1.8s + 0.5s buffer) */
+            animation-delay: 2.3s; 
         }
 
         @keyframes slideUpBounce {
@@ -246,16 +245,17 @@
 
         <!-- PDF Viewer Area -->
         <div class="iframe-container">
+            <!-- Enlace actualizado al PDF directo de tu repositorio vía Google Viewer -->
             <iframe 
                 id="pdf-viewer" 
-                src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/solaritynew2026/SolarityManual/main/SOLINA.pdf&embedded=true"
+                src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/solaritynew2026/SolarityManual/main/SOLINA.pdf&embedded=true" 
                 title="Product PDF Document">
             </iframe>
         </div>
         
-        <!-- Floating WhatsApp Button -->
+        <!-- Floating WhatsApp Button (Reubicado a la izquierda) -->
         <a href="https://wa.me/NUMERO_DE_TELEFONO" target="_blank" rel="noopener noreferrer" 
-           class="wa-btn-entrance fixed bottom-6 right-4 md:bottom-10 md:right-10 z-50 flex items-center gap-2 md:gap-3 px-5 py-3 md:px-6 md:py-4 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.6)] transform transition-all duration-300 hover:-translate-y-2">
+           class="wa-btn-entrance fixed bottom-6 left-4 md:bottom-10 md:left-10 z-50 flex items-center gap-2 md:gap-3 px-5 py-3 md:px-6 md:py-4 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.6)] transform transition-all duration-300 hover:-translate-y-2">
             
             <!-- WhatsApp SVG Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
